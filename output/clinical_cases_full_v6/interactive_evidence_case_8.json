@@ -1,0 +1,369 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 8,
+  "query": "患者产后使用阿片酊片止痛，使用5天，咨询患者停药后多长时间可哺乳？",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-8-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [],
+    "question": "系统识别出 0 项病例信息和 11 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "active_ingredients_and_formulation",
+        "field_kind": "external_evidence",
+        "label": "复方药物的活性成分和剂型",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "lactation_compatibility_assessment",
+        "field_kind": "external_evidence",
+        "label": "哺乳期相容性结论及适用条件",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "authoritative_breastfeeding_resumption_recommendation",
+        "field_kind": "external_evidence",
+        "label": "停乳或恢复哺乳建议",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "terminal_elimination_half_life",
+        "field_kind": "external_evidence",
+        "label": "终末消除半衰期",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "active_metabolites_and_half_lives",
+        "field_kind": "external_evidence",
+        "label": "活性代谢物及其半衰期",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "molecular_weight",
+        "field_kind": "external_evidence",
+        "label": "分子量",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "protein_binding_fraction",
+        "field_kind": "external_evidence",
+        "label": "蛋白结合率",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "fraction_metabolized_and_elimination_route",
+        "field_kind": "external_evidence",
+        "label": "代谢比例、代谢途径和主要排泄途径",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "milk_transfer_or_relative_infant_dose",
+        "field_kind": "external_evidence",
+        "label": "乳汁浓度、乳血比或相对婴儿剂量",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "infant_oral_bioavailability",
+        "field_kind": "external_evidence",
+        "label": "婴儿口服生物利用度",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "monitoring_recommendation",
+        "field_kind": "external_evidence",
+        "label": "母亲和婴儿监测建议",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [
+    {
+      "turn": 1,
+      "created_at_utc": "2026-07-30T13:56:22.628255+00:00",
+      "terminal_input": "阿片酊主要有效成分为吗啡，吗啡的哺乳用药等级为L3，吗啡的半衰期为1.5~2h，分子量为285，相对婴儿剂量0.09%~35%，血浆蛋白结合率35%",
+      "accepted_entries": [
+        {
+          "field": "active_ingredients_and_formulation",
+          "value": "吗啡",
+          "unit": null,
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "阿片酊主要有效成分为吗啡",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "lactation_compatibility_assessment",
+          "value": "L3",
+          "unit": null,
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "哺乳用药等级为L3",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "terminal_elimination_half_life",
+          "value": "1.5~2",
+          "unit": "h",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "半衰期为1.5~2h",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "molecular_weight",
+          "value": "285",
+          "unit": null,
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "分子量为285",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "milk_transfer_or_relative_infant_dose",
+          "value": "0.09~35",
+          "unit": "%",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "相对婴儿剂量0.09%~35%",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "protein_binding_fraction",
+          "value": "35",
+          "unit": "%",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "血浆蛋白结合率35%",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        }
+      ],
+      "rejected_entries": [],
+      "unmapped_text": "",
+      "response_id": "chatcmpl-9eb95923-598c-99de-a5ca-ea59dbfbbad6",
+      "usage": {
+        "completion_tokens": 2483,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1666,
+          "text_tokens": 2483
+        },
+        "prompt_tokens": 1914,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1914
+        },
+        "total_tokens": 4397
+      }
+    }
+  ],
+  "values": {
+    "active_ingredients_and_formulation": {
+      "field": "active_ingredients_and_formulation",
+      "value": "吗啡",
+      "unit": null,
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "阿片酊主要有效成分为吗啡",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "lactation_compatibility_assessment": {
+      "field": "lactation_compatibility_assessment",
+      "value": "L3",
+      "unit": null,
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "哺乳用药等级为L3",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "terminal_elimination_half_life": {
+      "field": "terminal_elimination_half_life",
+      "value": "1.5~2",
+      "unit": "h",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "半衰期为1.5~2h",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "molecular_weight": {
+      "field": "molecular_weight",
+      "value": "285",
+      "unit": null,
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "分子量为285",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "milk_transfer_or_relative_infant_dose": {
+      "field": "milk_transfer_or_relative_infant_dose",
+      "value": "0.09~35",
+      "unit": "%",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "相对婴儿剂量0.09%~35%",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "protein_binding_fraction": {
+      "field": "protein_binding_fraction",
+      "value": "35",
+      "unit": "%",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "血浆蛋白结合率35%",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    }
+  },
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [
+    {
+      "method": "five_half_life_mechanistic_estimate",
+      "half_life_count": 5,
+      "numeric_selection_rule": "upper_bound_when_a_range_is_reported",
+      "input_half_life_hours": 2.0,
+      "estimated_five_half_lives_hours": 10.0,
+      "estimated_five_half_lives_days": 0.417,
+      "estimated_five_half_lives_days_rounded_1dp": 0.4,
+      "estimated_remaining_fraction": 0.03125,
+      "estimated_remaining_percent": 3.125,
+      "estimated_eliminated_percent": 96.875,
+      "pharmacokinetic_assumption": "first_order_elimination_mechanistic_approximation",
+      "status": "mechanistic_estimate_not_clinical_recommendation",
+      "warning": "This estimate is not an automatically validated breastfeeding resumption recommendation and does not automatically account for active metabolites, repeated dosing, nonlinear kinetics, organ function, milk transfer, infant absorption, or patient-specific clearance."
+    }
+  ],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T13:56:34.999935+00:00"
+}

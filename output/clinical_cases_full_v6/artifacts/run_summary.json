@@ -1,0 +1,26 @@
+{
+  "query_count": 51,
+  "record_count": 51,
+  "successful_record_count": 51,
+  "error_record_count": 0,
+  "groups": [
+    "medsafe_full"
+  ],
+  "action_counts": {
+    "caution": 15,
+    "continue": 2,
+    "undetermined": 34
+  },
+  "review_level_counts": {
+    "pharmacist_review": 36,
+    "specialist_review": 15
+  },
+  "terminal_state_counts": {
+    "awaiting_external_evidence": 5,
+    "human_review_required": 46
+  },
+  "actual_model_counts": {
+    "qwen3.7-plus-2026-05-26": 51
+  },
+  "fallback_record_count": 0
+}

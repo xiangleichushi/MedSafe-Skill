@@ -1,0 +1,44 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 48,
+  "query": "患者抑郁症焦虑症病史6年，近几年计划妊娠所以尝试药物减量，长期口服富马酸喹硫平缓释片(思瑞康)每天约10mg,期间药物不能完全停用，否则出现反复失眠，但总体情绪控制佳，继续服用小剂量喹硫平睡眠质量可。咨询继续目前用药方案是否可考虑妊娠?",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-48-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [],
+    "question": "系统识别出 1 项病例信息和 0 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "gestational_age",
+        "field_kind": "case_fact",
+        "label": "gestational_age",
+        "priority": "important",
+        "purpose": "Individualized pregnancy advice may depend on gestational stage.",
+        "source_fact": null
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [],
+  "values": {},
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T14:21:42.719783+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "input_count": 51,
+  "top_k": 10,
+  "total_card_hits": 509,
+  "unmatched_count": 1,
+  "unmatched_examples": [
+    {
+      "query_id": 44,
+      "query": "患者32岁，2年前于外院诊断急性焦虑症，曾有两次住院病史。2018年4月至2019年5月因焦虑症、心动过速每日早晨予以帕罗西汀20mg,地西泮5mg,美托洛尔50mg;中午予以地西泮5mg;睡前予以阿普唑仑0.4mg治疗。2019年5月至2019年10月更改药物治疗为早晨予以地西泮5mg;睡前予以美托洛尔25mg治疗。2019年10月至2020年3月自行调整药物剂量为地西泮0.4mg每3~4天一次、美托洛尔12.5mg每3~4天一次。2020年2月发现意外妊娠，咨询孩子出生缺陷风险，能否保留孩子?",
+      "drug": "氯草酸钾"
+    }
+  ],
+  "action_labels": {
+    "undetermined": 133,
+    "caution": 233,
+    "continue": 117,
+    "avoid": 26
+  },
+  "review_levels": {
+    "specialist_review": 104,
+    "standard_clinician_confirmation": 117,
+    "pharmacist_review": 288
+  },
+  "case_action_labels": {
+    "undetermined": 22,
+    "continue": 3,
+    "caution": 26
+  },
+  "workflow_final_states": {
+    "claim_verification_pending": 51
+  },
+  "observation_sources": {
+    "llm_extracted_semantically_validated": 51
+  }
+}

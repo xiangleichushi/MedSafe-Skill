@@ -1,0 +1,147 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 17,
+  "query": "哺乳期患者因胰腺炎使用生长抑素，停药多久可以哺乳",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-17-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [
+      "胰脂肪酶"
+    ],
+    "question": "系统识别出 1 项病例信息和 12 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "authoritative_breastfeeding_resumption_recommendation",
+        "priority": "critical",
+        "purpose": "优先采用说明书、指南或权威药学数据库给出的停乳/恢复哺乳建议。",
+        "field_kind": "external_evidence",
+        "label": "停乳或恢复哺乳建议",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "terminal_elimination_half_life",
+        "priority": "critical",
+        "unit_required": true,
+        "purpose": "评估母体停药后的清除时间；必须说明剂型、途径、单次或多次给药及研究人群。",
+        "field_kind": "external_evidence",
+        "label": "终末消除半衰期",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "active_metabolites_and_half_lives",
+        "priority": "critical_if_applicable",
+        "purpose": "活性代谢物可能比原药清除更慢，不能只使用原药半衰期。",
+        "field_kind": "external_evidence",
+        "label": "活性代谢物及其半衰期",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "molecular_weight",
+        "priority": "supportive",
+        "unit_required": true,
+        "purpose": "辅助评价进入乳汁的可能性，不能单独决定恢复哺乳时间。",
+        "field_kind": "external_evidence",
+        "label": "分子量",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "protein_binding_fraction",
+        "priority": "supportive",
+        "unit_required": true,
+        "purpose": "辅助评价游离药物比例和乳汁转运，不能单独决定恢复哺乳时间。",
+        "field_kind": "external_evidence",
+        "label": "蛋白结合率",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "fraction_metabolized_and_elimination_route",
+        "priority": "supportive",
+        "purpose": "记录代谢比例、主要代谢途径以及肾/胆汁清除，并结合母体肝肾功能解释。",
+        "field_kind": "external_evidence",
+        "label": "代谢比例、代谢途径和主要排泄途径",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "milk_transfer_or_relative_infant_dose",
+        "priority": "preferred",
+        "unit_required": true,
+        "purpose": "若有乳汁浓度、乳血比或相对婴儿剂量，可直接改善哺乳暴露评估。",
+        "field_kind": "external_evidence",
+        "label": "乳汁浓度、乳血比或相对婴儿剂量",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "infant_oral_bioavailability",
+        "priority": "supportive",
+        "unit_required": true,
+        "purpose": "辅助判断乳汁中药物被婴儿摄入后的系统暴露。",
+        "field_kind": "external_evidence",
+        "label": "婴儿口服生物利用度",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "time_since_last_dose",
+        "field_kind": "case_fact",
+        "label": "实际或计划末次给药时间",
+        "priority": "important",
+        "purpose": "A breastfeeding-resumption question lacks the actual or planned time of the last dose.",
+        "source_fact": null
+      },
+      {
+        "field": "external_evidence_preconception_interval",
+        "field_kind": "external_evidence",
+        "label": "补充当前资料未覆盖的医学信息“preconception_interval”",
+        "priority": "important",
+        "purpose": "当前 Evidence Cards 未覆盖该事实；由专业操作者补充确认信息。",
+        "source_fact": "preconception_interval"
+      },
+      {
+        "field": "active_ingredients_and_formulation",
+        "field_kind": "external_evidence",
+        "label": "复方药物的活性成分和剂型",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "lactation_compatibility_assessment",
+        "field_kind": "external_evidence",
+        "label": "哺乳期相容性结论及适用条件",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "monitoring_recommendation",
+        "field_kind": "external_evidence",
+        "label": "母亲和婴儿监测建议",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [],
+  "values": {},
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T14:09:33.979283+00:00"
+}

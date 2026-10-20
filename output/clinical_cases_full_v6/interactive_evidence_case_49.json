@@ -1,0 +1,44 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 49,
+  "query": "患者既往因癫痫每日服用丙戊酸钠750mg,2019年11月1日发现妊娠后停药至今，现新生儿1月龄，处于全母乳喂养时期，2020年8月6日患者出现癫痫发作，咨询再次开始服用丙戊酸钠治疗期间能否母乳喂养?",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-49-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [],
+    "question": "系统识别出 1 项病例信息和 0 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "prematurity_status",
+        "field_kind": "case_fact",
+        "label": "婴儿是否早产",
+        "priority": "important",
+        "purpose": "Prematurity is a clinically relevant lactation risk modifier.",
+        "source_fact": null
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [],
+  "values": {},
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T14:21:44.112095+00:00"
+}

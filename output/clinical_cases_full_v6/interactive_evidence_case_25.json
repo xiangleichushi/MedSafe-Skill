@@ -1,0 +1,89 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 25,
+  "query": "足月儿，母亲产后镇静使用苯巴比妥，问多久可哺乳？",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-25-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [],
+    "question": "系统识别出 1 项病例信息和 0 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "time_since_last_dose",
+        "field_kind": "case_fact",
+        "label": "实际或计划末次给药时间",
+        "priority": "important",
+        "purpose": "A breastfeeding-resumption question lacks the actual or planned time of the last dose.",
+        "source_fact": null
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [
+    {
+      "turn": 1,
+      "created_at_utc": "2026-07-30T14:15:13.998282+00:00",
+      "terminal_input": "苯巴比妥分子量小（232），血浆蛋白结合率51%, 半衰期长50~140h，相对婴儿剂量较大（24%），L4分级",
+      "accepted_entries": [],
+      "rejected_entries": [],
+      "unmapped_text": "苯巴比妥分子量小（232），血浆蛋白结合率51%, 半衰期长50~140h，相对婴儿剂量较大（24%），L4分级",
+      "response_id": "chatcmpl-0f834e69-cc2b-9338-9637-7328be3159b9",
+      "usage": {
+        "completion_tokens": 451,
+        "completion_tokens_details": {
+          "reasoning_tokens": 385,
+          "text_tokens": 451
+        },
+        "prompt_tokens": 1135,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1135
+        },
+        "total_tokens": 1586
+      }
+    },
+    {
+      "turn": 2,
+      "created_at_utc": "2026-07-30T14:16:24.991392+00:00",
+      "terminal_input": "苯巴比妥分子量小（232），血浆蛋白结合率51%, 半衰期长50~140h，相对婴儿剂量较大（24%），L4分级",
+      "accepted_entries": [],
+      "rejected_entries": [],
+      "unmapped_text": "苯巴比妥分子量小（232），血浆蛋白结合率51%, 半衰期长50~140h，相对婴儿剂量较大（24%），L4分级",
+      "response_id": "chatcmpl-44a4e587-2387-903c-84cc-830cf1b64c22",
+      "usage": {
+        "completion_tokens": 451,
+        "completion_tokens_details": {
+          "reasoning_tokens": 385,
+          "text_tokens": 451
+        },
+        "prompt_tokens": 1135,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1135
+        },
+        "total_tokens": 1586
+      }
+    }
+  ],
+  "values": {},
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T14:16:28.900781+00:00"
+}

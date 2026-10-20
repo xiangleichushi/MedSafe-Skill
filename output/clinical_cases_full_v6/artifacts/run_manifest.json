@@ -1,0 +1,56 @@
+{
+  "manifest_version": "1.0.0",
+  "created_at_utc": "2026-07-30T13:40:32.704193+00:00",
+  "query_count": 51,
+  "record_count": 51,
+  "successful_record_count": 51,
+  "groups": [
+    "medsafe_full"
+  ],
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "actual_model_counts": {
+    "qwen3.7-plus-2026-05-26": 51
+  },
+  "temperature": 0.0,
+  "max_tokens": 6000,
+  "observation_max_tokens": 1200,
+  "observation_semantic_max_tokens": 1200,
+  "query_path": "/root/autodl-tmp/my_project/medsafe_skill/output/clinical_cases_full_v6/clinical_cases_public.json",
+  "query_sha256": "e55ca29ff69929534db1af59641a1b49b06af477dd5748660c675363f60973a6",
+  "retrieval_output": "/root/autodl-tmp/my_project/medsafe_skill/output/clinical_cases_full_v6/hrc_retrieval_with_cards.json",
+  "retrieval_sha256": "bf3d144aa3e2cee7203f6b8ba50f12d47e76b41c58ffb042e59b4ec5784ce360",
+  "retrieval_sha256_values_in_records": [
+    "bf3d144aa3e2cee7203f6b8ba50f12d47e76b41c58ffb042e59b4ec5784ce360"
+  ],
+  "cards_path": "/root/autodl-tmp/my_project/medsafe_skill/resources/evidence_cards.jsonl",
+  "cards_sha256": "3b1442ca412ba61cd0e1f262e6643ffdae688fb1aa684c6c62f85000462d62aa",
+  "observation_cache": "/root/autodl-tmp/my_project/medsafe_skill/output/clinical_cases_full_v6/clinical_observations_cache.json",
+  "observation_cache_sha256": "8a26e8a6c94d70e538b8a12e0ca1ac733baf66a6e14dc2bc4324002abbaf89f5",
+  "primary_output": "/root/autodl-tmp/my_project/medsafe_skill/output/clinical_cases_full_v6/clinical_case_answers.json",
+  "primary_output_sha256": "5e03424ca18c4877754344d806cf565661258c8d89f69929c496b48dd4b6f2c5",
+  "prompt_hashes": {
+    "claim_generator_v1.txt": "82e968bf969a379ebc6e874779dc78b66aa113d3fdc0e126cf4981c0b649d972",
+    "claim_json_repair_v1.txt": "c2b268962f8b0b0f54f98c292a3c228bad6d0077a1ebb2520055de15fb3a0bd4",
+    "expert_prompt_v1.txt": "ff8f773701afc6af49ad26b0aa5edb2dce63fc729d5036fa82ffb7fddef03ea7",
+    "final_answer_clinical_style_v3.txt": "292176811803cd34dee06845d2baa46147e122bce2d1ce5eb8060d8805a5ead3",
+    "final_answer_clinical_style_v4.txt": "fc06f2508ebe3bef61a8731779b69b6925d0866a08b113989c86d24cec4c9cc4",
+    "final_answer_with_model_prior_v1.txt": "cac613744a7842193b5a1a3c3ee4e76f9d948801a2cf6ef1b7c7092bf5e66d7d",
+    "hrc_critic_clinical_v2.txt": "c59264f1e45de977f517e1e6cfe09513e62e61475658665b80516fa40c59a006",
+    "llm_only_v1.txt": "67d0ee4dc0d44ec1e2b4158bc1b141ced87fad7cece6aed8c895b84f44ee7a3e",
+    "observation_extractor_v1.txt": "2c30c547f261017b90b527f2dcd522f540a9e952050e862c044904ce06309346",
+    "observation_semantic_verifier_v1.txt": "e6427e8635898a5a8a466d579266f129e6edc730fc959bf0b51789d9af7bebc1",
+    "standard_rag_v1.txt": "1baf9f6ec6809fbdf35aa2ca93afae77de027033bf71d5c139080852cf6a8ceb",
+    "supplemental_answer_generator_v1.txt": "fc41f602dceb5a98a5316e5980554374fb0acea5091809c2b54320e4325ad3f4",
+    "supplemental_evidence_extractor_v2.txt": "21852418ca171e86dc4825b93aa7a6085b814a8fe26647c84105efd7ceca86a0"
+  },
+  "implementation_sha256": "b6e050376f7be46e95d494ba0c6404ec6dea6b8d7c58b8fee70e337f76a0e901",
+  "notes": [
+    "reasoning_traces.jsonl stores structured auditable traces, not hidden chain-of-thought.",
+    "human_evaluation_candidates.csv is unblinded; use the dedicated review builder for blinded scoring.",
+    "clinical_answer_review.csv supports post-output clinical rating and is not a gold-label file."
+  ]
+}

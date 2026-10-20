@@ -1,0 +1,16 @@
+{
+  "workbook": "/root/autodl-tmp/my_project/哺乳期药学门诊咨询.xlsx",
+  "sheet": "Sheet1",
+  "headers": {
+    "0": "序号",
+    "1": "输入问题",
+    "2": "建议回答回答"
+  },
+  "id_column": "序号",
+  "query_column": "输入问题",
+  "reference_column": "建议回答回答",
+  "case_count": 51,
+  "reference_answer_count": 51,
+  "skipped_empty_rows": 0,
+  "reference_answers_excluded_from_model_input": true
+}

@@ -1,0 +1,239 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 2,
+  "query": "患者处于哺乳期，目前存在宫内感染，是否可给予头孢哌酮舒巴坦",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-2-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [],
+    "question": "系统识别出 0 项病例信息和 11 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "active_ingredients_and_formulation",
+        "field_kind": "external_evidence",
+        "label": "复方药物的活性成分和剂型",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "lactation_compatibility_assessment",
+        "field_kind": "external_evidence",
+        "label": "哺乳期相容性结论及适用条件",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "authoritative_breastfeeding_resumption_recommendation",
+        "field_kind": "external_evidence",
+        "label": "停乳或恢复哺乳建议",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "terminal_elimination_half_life",
+        "field_kind": "external_evidence",
+        "label": "终末消除半衰期",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "active_metabolites_and_half_lives",
+        "field_kind": "external_evidence",
+        "label": "活性代谢物及其半衰期",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "molecular_weight",
+        "field_kind": "external_evidence",
+        "label": "分子量",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "protein_binding_fraction",
+        "field_kind": "external_evidence",
+        "label": "蛋白结合率",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "fraction_metabolized_and_elimination_route",
+        "field_kind": "external_evidence",
+        "label": "代谢比例、代谢途径和主要排泄途径",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "milk_transfer_or_relative_infant_dose",
+        "field_kind": "external_evidence",
+        "label": "乳汁浓度、乳血比或相对婴儿剂量",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "infant_oral_bioavailability",
+        "field_kind": "external_evidence",
+        "label": "婴儿口服生物利用度",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "monitoring_recommendation",
+        "field_kind": "external_evidence",
+        "label": "母亲和婴儿监测建议",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [
+    {
+      "turn": 1,
+      "created_at_utc": "2026-07-30T13:53:00.931114+00:00",
+      "terminal_input": "头孢哌酮分子量为645.67，舒巴坦分子量为233.242，复方药物的半衰期为1-1.7h",
+      "accepted_entries": [
+        {
+          "field": "molecular_weight",
+          "value": {
+            "头孢哌酮": "645.67",
+            "舒巴坦": "233.242"
+          },
+          "unit": null,
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "头孢哌酮分子量为645.67，舒巴坦分子量为233.242",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "terminal_elimination_half_life",
+          "value": "1-1.7",
+          "unit": "h",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "半衰期为1-1.7h",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        }
+      ],
+      "rejected_entries": [],
+      "unmapped_text": "",
+      "response_id": "chatcmpl-78fd1a9b-3884-9f99-afd5-7fcfbd52cf2d",
+      "usage": {
+        "completion_tokens": 1590,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1253,
+          "text_tokens": 1590
+        },
+        "prompt_tokens": 1892,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1892
+        },
+        "total_tokens": 3482
+      }
+    }
+  ],
+  "values": {
+    "molecular_weight": {
+      "field": "molecular_weight",
+      "value": {
+        "头孢哌酮": "645.67",
+        "舒巴坦": "233.242"
+      },
+      "unit": null,
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "头孢哌酮分子量为645.67，舒巴坦分子量为233.242",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "terminal_elimination_half_life": {
+      "field": "terminal_elimination_half_life",
+      "value": "1-1.7",
+      "unit": "h",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "半衰期为1-1.7h",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    }
+  },
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [
+    {
+      "method": "five_half_life_mechanistic_estimate",
+      "half_life_count": 5,
+      "numeric_selection_rule": "upper_bound_when_a_range_is_reported",
+      "input_half_life_hours": 1.7,
+      "estimated_five_half_lives_hours": 8.5,
+      "estimated_five_half_lives_days": 0.354,
+      "estimated_five_half_lives_days_rounded_1dp": 0.4,
+      "estimated_remaining_fraction": 0.03125,
+      "estimated_remaining_percent": 3.125,
+      "estimated_eliminated_percent": 96.875,
+      "pharmacokinetic_assumption": "first_order_elimination_mechanistic_approximation",
+      "status": "mechanistic_estimate_not_clinical_recommendation",
+      "warning": "This estimate is not an automatically validated breastfeeding resumption recommendation and does not automatically account for active metabolites, repeated dosing, nonlinear kinetics, organ function, milk transfer, infant absorption, or patient-specific clearance."
+    }
+  ],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T13:53:08.798300+00:00"
+}

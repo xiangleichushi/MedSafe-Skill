@@ -1,0 +1,308 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 12,
+  "query": "患者既往有癫痫，产后予以苯巴比妥抗癫痫治疗，用药期间能否哺乳？若不可以，停药几天后可以哺乳？",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-12-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [
+      "苯巴比妥"
+    ],
+    "question": "系统识别出 3 项病例信息和 8 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "authoritative_breastfeeding_resumption_recommendation",
+        "priority": "critical",
+        "purpose": "优先采用说明书、指南或权威药学数据库给出的停乳/恢复哺乳建议。",
+        "field_kind": "external_evidence",
+        "label": "停乳或恢复哺乳建议",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "terminal_elimination_half_life",
+        "priority": "critical",
+        "unit_required": true,
+        "purpose": "评估母体停药后的清除时间；必须说明剂型、途径、单次或多次给药及研究人群。",
+        "field_kind": "external_evidence",
+        "label": "终末消除半衰期",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "active_metabolites_and_half_lives",
+        "priority": "critical_if_applicable",
+        "purpose": "活性代谢物可能比原药清除更慢，不能只使用原药半衰期。",
+        "field_kind": "external_evidence",
+        "label": "活性代谢物及其半衰期",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "molecular_weight",
+        "priority": "supportive",
+        "unit_required": true,
+        "purpose": "辅助评价进入乳汁的可能性，不能单独决定恢复哺乳时间。",
+        "field_kind": "external_evidence",
+        "label": "分子量",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "protein_binding_fraction",
+        "priority": "supportive",
+        "unit_required": true,
+        "purpose": "辅助评价游离药物比例和乳汁转运，不能单独决定恢复哺乳时间。",
+        "field_kind": "external_evidence",
+        "label": "蛋白结合率",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "fraction_metabolized_and_elimination_route",
+        "priority": "supportive",
+        "purpose": "记录代谢比例、主要代谢途径以及肾/胆汁清除，并结合母体肝肾功能解释。",
+        "field_kind": "external_evidence",
+        "label": "代谢比例、代谢途径和主要排泄途径",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "milk_transfer_or_relative_infant_dose",
+        "priority": "preferred",
+        "unit_required": true,
+        "purpose": "若有乳汁浓度、乳血比或相对婴儿剂量，可直接改善哺乳暴露评估。",
+        "field_kind": "external_evidence",
+        "label": "乳汁浓度、乳血比或相对婴儿剂量",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "infant_oral_bioavailability",
+        "priority": "supportive",
+        "unit_required": true,
+        "purpose": "辅助判断乳汁中药物被婴儿摄入后的系统暴露。",
+        "field_kind": "external_evidence",
+        "label": "婴儿口服生物利用度",
+        "source_fact": "breastfeeding_interval"
+      },
+      {
+        "field": "dose",
+        "field_kind": "case_fact",
+        "label": "母亲具体用药剂量",
+        "priority": "important",
+        "purpose": "Individualized exposure assessment lacks an explicit dose.",
+        "source_fact": null
+      },
+      {
+        "field": "infant_age",
+        "field_kind": "case_fact",
+        "label": "婴儿日龄或月龄",
+        "priority": "important",
+        "purpose": "Infant age can materially change lactation risk interpretation.",
+        "source_fact": null
+      },
+      {
+        "field": "prematurity_status",
+        "field_kind": "case_fact",
+        "label": "婴儿是否早产",
+        "priority": "important",
+        "purpose": "Prematurity is a clinically relevant lactation risk modifier.",
+        "source_fact": null
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [
+    {
+      "turn": 1,
+      "created_at_utc": "2026-07-30T14:07:34.256471+00:00",
+      "terminal_input": "苯巴比妥分子量小（232），血浆蛋白结合率51%, 半衰期长50~140h，相对婴儿剂量较大（24%），L4分级",
+      "accepted_entries": [
+        {
+          "field": "molecular_weight",
+          "value": "232",
+          "unit": null,
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "分子量小（232）",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "protein_binding_fraction",
+          "value": "51",
+          "unit": "%",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "血浆蛋白结合率51%",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "terminal_elimination_half_life",
+          "value": "50~140",
+          "unit": "h",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "半衰期长50~140h",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "milk_transfer_or_relative_infant_dose",
+          "value": "24",
+          "unit": "%",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "相对婴儿剂量较大（24%）",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        }
+      ],
+      "rejected_entries": [],
+      "unmapped_text": "L4分级",
+      "response_id": "chatcmpl-76b212f0-ead0-9e04-81c4-2a8676b906f6",
+      "usage": {
+        "completion_tokens": 1906,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1350,
+          "text_tokens": 1906
+        },
+        "prompt_tokens": 1895,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1895
+        },
+        "total_tokens": 3801
+      }
+    }
+  ],
+  "values": {
+    "molecular_weight": {
+      "field": "molecular_weight",
+      "value": "232",
+      "unit": null,
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "分子量小（232）",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "protein_binding_fraction": {
+      "field": "protein_binding_fraction",
+      "value": "51",
+      "unit": "%",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "血浆蛋白结合率51%",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "terminal_elimination_half_life": {
+      "field": "terminal_elimination_half_life",
+      "value": "50~140",
+      "unit": "h",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "半衰期长50~140h",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "milk_transfer_or_relative_infant_dose": {
+      "field": "milk_transfer_or_relative_infant_dose",
+      "value": "24",
+      "unit": "%",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "相对婴儿剂量较大（24%）",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    }
+  },
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [
+    {
+      "method": "five_half_life_mechanistic_estimate",
+      "half_life_count": 5,
+      "numeric_selection_rule": "upper_bound_when_a_range_is_reported",
+      "input_half_life_hours": 140.0,
+      "estimated_five_half_lives_hours": 700.0,
+      "estimated_five_half_lives_days": 29.167,
+      "estimated_five_half_lives_days_rounded_1dp": 29.2,
+      "estimated_remaining_fraction": 0.03125,
+      "estimated_remaining_percent": 3.125,
+      "estimated_eliminated_percent": 96.875,
+      "pharmacokinetic_assumption": "first_order_elimination_mechanistic_approximation",
+      "status": "mechanistic_estimate_not_clinical_recommendation",
+      "warning": "This estimate is not an automatically validated breastfeeding resumption recommendation and does not automatically account for active metabolites, repeated dosing, nonlinear kinetics, organ function, milk transfer, infant absorption, or patient-specific clearance."
+    }
+  ],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T14:07:53.203023+00:00"
+}

@@ -1,0 +1,623 @@
+{
+  "metric_scope": {
+    "description": "Objective internal-process, traceability, coverage, safety-policy, and resource metrics. These are not clinical accuracy estimates.",
+    "run_dir": "medsafe_skill\\output\\clinical_cases_full_v6",
+    "timing_included": false,
+    "human_scores_included": false
+  },
+  "cohort": {
+    "case_count": 51,
+    "unique_case_id_count": 51,
+    "reference_answer_count": 51,
+    "reference_answers_excluded_from_model_input": true,
+    "query_length_characters": {
+      "n": 51,
+      "total": 3566.0,
+      "mean": 69.922,
+      "median": 58.0,
+      "q1": 29.0,
+      "q3": 96.0,
+      "min": 12.0,
+      "max": 251.0
+    },
+    "reproductive_context_distribution": {
+      "None": 2,
+      "lactation": 31,
+      "preconception": 2,
+      "pregnancy": 16
+    },
+    "consultation_intent_distribution": {
+      "breastfeeding_interruption": 5,
+      "dose_or_exposure": 4,
+      "medication_safety_and_compatibility": 34,
+      "monitoring_and_adverse_effects": 2,
+      "safer_alternative": 6
+    },
+    "cases_with_accepted_risk_factors": 7,
+    "accepted_risk_factor_distribution": {
+      "maternal_hepatic_impairment": 1,
+      "medication_allergy_history": 3,
+      "newborn_infant": 2,
+      "polypharmacy": 1,
+      "severe_maternal_disease": 1
+    }
+  },
+  "observation_extraction": {
+    "cache_record_count": 51,
+    "case_id_coverage_count": 51,
+    "structural_candidate_fields": {
+      "n": 51,
+      "total": 317.0,
+      "mean": 6.216,
+      "median": 6.0,
+      "q1": 5.0,
+      "q3": 7.0,
+      "min": 3.0,
+      "max": 11.0
+    },
+    "semantically_accepted_fields": {
+      "n": 51,
+      "total": 317.0,
+      "mean": 6.216,
+      "median": 6.0,
+      "q1": 5.0,
+      "q3": 7.0,
+      "min": 3.0,
+      "max": 11.0
+    },
+    "semantic_retention_rate_percent": 100.0,
+    "field_verdict_distribution": {
+      "entails": 317
+    },
+    "risk_factor_verdict_distribution": {
+      "entails": 8,
+      "insufficient": 1
+    },
+    "zero_structural_error_cases": 46,
+    "zero_semantic_error_cases": 50,
+    "all_non_null_spans_validated_cases": 51,
+    "all_accepted_values_semantically_verified_cases": 51,
+    "stage1_observation_cache_hit_cases": 51,
+    "recorded_token_usage": {
+      "prompt_tokens": {
+        "n": 51,
+        "total": 126090.0,
+        "mean": 2472.353,
+        "median": 2443.0,
+        "q1": 2378.0,
+        "q3": 2526.5,
+        "min": 2290.0,
+        "max": 2907.0
+      },
+      "completion_tokens": {
+        "n": 51,
+        "total": 200935.0,
+        "mean": 3939.902,
+        "median": 3950.0,
+        "q1": 3233.5,
+        "q3": 4534.5,
+        "min": 2122.0,
+        "max": 6300.0
+      },
+      "total_tokens": {
+        "n": 51,
+        "total": 327025.0,
+        "mean": 6412.255,
+        "median": 6403.0,
+        "q1": 5679.5,
+        "q3": 7058.5,
+        "min": 4412.0,
+        "max": 9207.0
+      }
+    }
+  },
+  "retrieval_and_evidence": {
+    "retrieval_record_count": 51,
+    "retrieval_quality_status_distribution": {
+      "failed_after_retries": 27,
+      "passed": 24
+    },
+    "critic_round_distribution": {
+      "1": 20,
+      "2": 3,
+      "3": 28
+    },
+    "cases_with_retrieval_retry": 31,
+    "final_reranked_candidate_count": {
+      "n": 51,
+      "total": 667.0,
+      "mean": 13.078,
+      "median": 20.0,
+      "q1": 3.5,
+      "q3": 20.0,
+      "min": 1.0,
+      "max": 20.0
+    },
+    "attached_evidence_card_count": {
+      "n": 51,
+      "total": 510.0,
+      "mean": 10.0,
+      "median": 10.0,
+      "q1": 10.0,
+      "q3": 10.0,
+      "min": 10.0,
+      "max": 10.0
+    },
+    "unmatched_drug_count": {
+      "n": 51,
+      "total": 1.0,
+      "mean": 0.02,
+      "median": 0.0,
+      "q1": 0,
+      "q3": 0,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "cases_with_unmatched_drugs": 1,
+    "unique_retrieved_card_count": 300,
+    "unique_retrieved_drug_count": 301,
+    "retrieval_context_distribution": {
+      "lactation": 28,
+      "pregnancy": 17,
+      "pregnancy_and_lactation": 4,
+      "unspecified": 2
+    },
+    "observation_retrieval_context_exact_agreement_count": 44,
+    "observation_retrieval_context_exact_agreement_percent": 86.3,
+    "observation_retrieval_context_mismatch_ids": [
+      28,
+      30,
+      35,
+      36,
+      47,
+      48,
+      49
+    ],
+    "card_decision_action_distribution": {
+      "avoid": 26,
+      "caution": 233,
+      "continue": 117,
+      "undetermined": 133
+    },
+    "pathway_scope_distribution": {
+      "lactation": 330,
+      "pregnancy": 199
+    },
+    "source_classification_raw_label_distribution": {
+      "A": 5,
+      "B": 43,
+      "B（3个月和6个月时），D（9个月）": 1,
+      "B（前20周）；D（20周后）": 1,
+      "C": 116,
+      "C（妊娠前3个月和第3～6个月），D（第6～9个月）": 1,
+      "D": 26,
+      "NS": 15,
+      "NS(可能)": 1,
+      "NS（可能的）": 1,
+      "NS（可能）": 3,
+      "S": 110,
+      "S(likely)": 2,
+      "S(possibly)": 2,
+      "S（likely）": 6,
+      "S（可能）": 56,
+      "S（局部），U（口服）": 1,
+      "S（局部）；U（口服）": 1,
+      "S（有可能）": 1,
+      "U": 129,
+      "U；S（可能）": 1,
+      "X": 6,
+      "无显著意义/不充分": 1
+    },
+    "source_classification_profile_distribution": {
+      "GUIDE_NATIVE_V2_2014": 529
+    },
+    "source_classification_signal_distribution": {
+      "contraindication_signal": 6,
+      "established_risk_benefit_may_override": 29,
+      "lower_risk_signal": 48,
+      "source_does_not_support_use": 20,
+      "source_evidence_unknown": 132,
+      "source_supports_use": 110,
+      "source_supports_use_with_qualifier": 67,
+      "uncertain_or_possible_risk": 116,
+      "uninterpretable_or_missing": 1
+    },
+    "systemic_absorption_status_distribution": {
+      "None": 199,
+      "unknown": 330
+    },
+    "cases_all_requested_facts_supported": 21,
+    "cases_with_unsupported_requested_facts": 30,
+    "unsupported_fact_distribution": {
+      "breastfeeding_interval": 5,
+      "preconception_interval": 3,
+      "retrieval_subquestion_coverage": 27
+    },
+    "appraised_card_count": 255,
+    "source_page_traceable_appraisal_count": 255,
+    "source_page_traceability_percent": 100.0,
+    "requested_fact_coverage_per_card": {
+      "n": 255,
+      "total": 219.333,
+      "mean": 0.86,
+      "median": 1.0,
+      "q1": 1.0,
+      "q3": 1.0,
+      "min": 0.0,
+      "max": 1.0
+    }
+  },
+  "decision_and_governance": {
+    "action_distribution": {
+      "caution": 15,
+      "continue": 2,
+      "undetermined": 34
+    },
+    "review_level_distribution": {
+      "pharmacist_review": 36,
+      "specialist_review": 15
+    },
+    "release_status_distribution": {
+      "advice_draft_human_review_required": 51
+    },
+    "final_state_distribution": {
+      "awaiting_external_evidence": 5,
+      "human_review_required": 46
+    },
+    "legal_terminal_state_cases": 51,
+    "state_trace_contiguous_cases": 51,
+    "state_transition_count": {
+      "n": 51,
+      "total": 362.0,
+      "mean": 7.098,
+      "median": 7.0,
+      "q1": 7.0,
+      "q3": 7.0,
+      "min": 7.0,
+      "max": 8.0
+    },
+    "decision_tree_node_count": {
+      "n": 51,
+      "total": 1390.0,
+      "mean": 27.255,
+      "median": 30.0,
+      "q1": 20.0,
+      "q3": 30.0,
+      "min": 20.0,
+      "max": 50.0
+    },
+    "decision_tree_node_execution_distribution": {
+      "LAC-01-evidence-card": 165,
+      "LAC-02-systemic-absorption": 165,
+      "LAC-03-source-risk": 165,
+      "LAC-04-safer-alternative": 165,
+      "LAC-05-infant-and-drug-risk": 165,
+      "LAC-06-shared-decision": 165,
+      "PRE-01-source-risk": 100,
+      "PRE-02-gestational-stage": 100,
+      "PRE-03-risk-escalation": 100,
+      "PRE-04-action": 100
+    },
+    "missing_information_item_count": 43,
+    "missing_information_slot_distribution": {
+      "allergy_reaction": 2,
+      "dose": 11,
+      "gestational_age": 3,
+      "infant_age": 9,
+      "prematurity_status": 12,
+      "time_since_last_dose": 6
+    },
+    "missing_information_severity_distribution": {
+      "critical": 4,
+      "important": 39
+    },
+    "unsupported_decision_fact_distribution": {
+      "breastfeeding_interval": 5,
+      "preconception_interval": 3,
+      "retrieval_subquestion_coverage": 27
+    },
+    "cases_with_external_evidence_request": 5,
+    "external_evidence_request_count": 5,
+    "deterministic_control_audit_pass_cases": 51,
+    "cases_confirming_l1_l5_not_inferred": 51,
+    "pathway_source_to_bounded_action_comparison_count": 529,
+    "source_to_bounded_action_transition_distribution": {
+      "avoid->avoid": 26,
+      "caution->caution": 212,
+      "continue->caution": 36,
+      "continue->continue": 122,
+      "undetermined->undetermined": 133
+    },
+    "conservative_action_escalation_count": 36,
+    "unchanged_bounded_action_count": 493,
+    "unsafe_action_downgrade_count": 0,
+    "case_level_avoid_to_continue_or_caution_violation_count": 0,
+    "review_under_escalation_count": 0
+  },
+  "claim_verification": {
+    "stage1_case_count": 51,
+    "all_claims_supported_case_count": 47,
+    "claim_count": {
+      "n": 51,
+      "total": 270.0,
+      "mean": 5.294,
+      "median": 4.0,
+      "q1": 2.0,
+      "q3": 7.5,
+      "min": 1.0,
+      "max": 21.0
+    },
+    "supported_claim_count": 264,
+    "unsupported_claim_count": 6,
+    "claim_support_rate_percent": 97.8,
+    "claim_type_distribution": {
+      "clarification": 23,
+      "evidence_absence": 45,
+      "medical": 185,
+      "safety_escalation": 17
+    },
+    "card_bound_claim_count": 190,
+    "card_bound_claim_rate_percent": 70.4,
+    "card_bound_claims_with_doc_and_pdf_pages": 190,
+    "card_bound_page_traceability_percent": 100.0,
+    "card_bound_claims_with_field_path": 190,
+    "card_bound_field_path_traceability_percent": 100.0,
+    "unsupported_claims_available_for_isolation_check": 6,
+    "unsupported_claims_used_in_final_answer": 0,
+    "unsupported_claim_isolation_rate_percent": 100.0,
+    "supported_stage1_claims_reused_in_final_answer": 155,
+    "stage1_revision_distribution": {
+      "0": 8,
+      "1": 43
+    },
+    "stage1_json_repair_distribution": {
+      "0": 51
+    },
+    "recorded_token_usage": {
+      "prompt_tokens": {
+        "n": 51,
+        "total": 1147514.0,
+        "mean": 22500.275,
+        "median": 23460.0,
+        "q1": 20705.0,
+        "q3": 26695.5,
+        "min": 9377.0,
+        "max": 32254.0
+      },
+      "completion_tokens": {
+        "n": 51,
+        "total": 562972.0,
+        "mean": 11038.667,
+        "median": 10781.0,
+        "q1": 7546.5,
+        "q3": 13920.0,
+        "min": 3210.0,
+        "max": 20338.0
+      },
+      "total_tokens": {
+        "n": 51,
+        "total": 1710486.0,
+        "mean": 33538.941,
+        "median": 34474.0,
+        "q1": 28427.0,
+        "q3": 40230.5,
+        "min": 12780.0,
+        "max": 50558.0
+      }
+    }
+  },
+  "interactive_supplementation": {
+    "session_file_count": 34,
+    "case_without_session_file_count": 17,
+    "session_status_distribution": {
+      "awaiting_additional_user_information": 1,
+      "supplementation_complete_with_missing_fields": 33
+    },
+    "requested_field_count": 367,
+    "requested_field_distribution": {
+      "active_ingredients_and_formulation": 27,
+      "active_metabolites_and_half_lives": 30,
+      "allergy_reaction": 2,
+      "authoritative_breastfeeding_resumption_recommendation": 30,
+      "dose": 11,
+      "external_evidence_preconception_interval": 3,
+      "fraction_metabolized_and_elimination_route": 30,
+      "gestational_age": 3,
+      "infant_age": 9,
+      "infant_oral_bioavailability": 30,
+      "lactation_compatibility_assessment": 27,
+      "milk_transfer_or_relative_infant_dose": 30,
+      "molecular_weight": 30,
+      "monitoring_recommendation": 27,
+      "prematurity_status": 12,
+      "protein_binding_fraction": 30,
+      "terminal_elimination_half_life": 30,
+      "time_since_last_dose": 6
+    },
+    "cases_with_user_supplied_values": 13,
+    "user_supplied_value_count": 52,
+    "user_supplied_field_distribution": {
+      "active_ingredients_and_formulation": 5,
+      "fraction_metabolized_and_elimination_route": 2,
+      "lactation_compatibility_assessment": 5,
+      "milk_transfer_or_relative_infant_dose": 5,
+      "molecular_weight": 12,
+      "protein_binding_fraction": 10,
+      "terminal_elimination_half_life": 13
+    },
+    "operator_input_policy": "accepted_as_confirmed_workflow_input",
+    "cases_with_derived_estimates": 12,
+    "derived_estimate_count": 12
+  },
+  "final_answer_generation": {
+    "record_count": 51,
+    "unique_case_id_count": 51,
+    "error_count": 0,
+    "validation_pass_count": 41,
+    "validation_pass_rate_percent": 80.4,
+    "generation_mode_distribution": {
+      "reasoning_trace_evidence_bound": 14,
+      "reasoning_trace_with_supplement_and_disclosed_model_prior": 37
+    },
+    "final_model_distribution": {
+      "qwen3.7-flash": 51
+    },
+    "answer_length_characters": {
+      "n": 51,
+      "total": 34141.0,
+      "mean": 669.431,
+      "median": 654.0,
+      "q1": 574.5,
+      "q3": 770.5,
+      "min": 409.0,
+      "max": 1081.0
+    },
+    "numbered_section_count": {
+      "n": 51,
+      "total": 519.0,
+      "mean": 10.176,
+      "median": 10.0,
+      "q1": 8.0,
+      "q3": 12.0,
+      "min": 0.0,
+      "max": 17.0
+    },
+    "numbered_format_case_count": 50,
+    "internal_provenance_leakage_case_count": 0,
+    "direct_evidence_card_case_count": 34,
+    "direct_evidence_card_case_rate_percent": 66.7,
+    "model_prior_case_count": 37,
+    "model_prior_case_rate_percent": 72.5,
+    "model_prior_claim_count": 55,
+    "low_confidence_model_prior_claim_count": 55,
+    "fixed_risk_disclosure_model_prior_claim_count": 0,
+    "verbatim_bound_model_prior_claim_count": 55,
+    "model_prior_target_field_distribution": {
+      "authoritative_breastfeeding_resumption_recommendation": 2,
+      "five_half_life_inference": 10,
+      "general_clinical_interpretation": 22,
+      "infant_oral_bioavailability": 1,
+      "lactation_compatibility_assessment": 7,
+      "milk_transfer_or_relative_infant_dose": 1,
+      "monitoring_recommendation": 6,
+      "provisional_clinical_answer": 5,
+      "unsupported_fact:breastfeeding_interval": 1
+    },
+    "discarded_model_prior_claim_count": 68,
+    "supplemental_value_used_case_count": 11,
+    "derived_estimate_used_case_count": 7,
+    "support_reference_class_distribution": {
+      "external_evidence": 185,
+      "model_internal_knowledge": 55
+    },
+    "final_revision_distribution": {
+      "0": 13,
+      "1": 19,
+      "2": 19
+    },
+    "cases_requiring_final_revision": 38,
+    "api_response_count": 108,
+    "route_attempt_outcome_distribution": {
+      "error": 2,
+      "success": 108
+    },
+    "fallback_route_count": 0,
+    "recorded_token_usage": {
+      "prompt_tokens": {
+        "n": 51,
+        "total": 468797.0,
+        "mean": 9192.098,
+        "median": 8550.0,
+        "q1": 6054.0,
+        "q3": 12521.0,
+        "min": 2559.0,
+        "max": 17268.0
+      },
+      "completion_tokens": {
+        "n": 51,
+        "total": 467173.0,
+        "mean": 9160.255,
+        "median": 7929.0,
+        "q1": 5436.0,
+        "q3": 12455.0,
+        "min": 3124.0,
+        "max": 21156.0
+      },
+      "total_tokens": {
+        "n": 51,
+        "total": 935970.0,
+        "mean": 18352.353,
+        "median": 16373.0,
+        "q1": 10820.5,
+        "q3": 24515.5,
+        "min": 5819.0,
+        "max": 36560.0
+      }
+    },
+    "audit_version_distribution": {
+      "3.0.0": 51
+    },
+    "trace_version_distribution": {
+      "1.0.0": 51
+    },
+    "prompt_sha256_complete_case_count": 51,
+    "base_record_sha256_complete_case_count": 51,
+    "session_sha256_complete_case_count": 51
+  },
+  "historical_reference_similarity": {
+    "reference_count": 51,
+    "reference_status_distribution": {
+      "source_workbook_text_not_gold": 51
+    },
+    "exact_match_count": 0,
+    "character_token_rouge_l_precision": {
+      "n": 51,
+      "total": 4.039,
+      "mean": 0.079,
+      "median": 0.078,
+      "q1": 0.055,
+      "q3": 0.104,
+      "min": 0.029,
+      "max": 0.155
+    },
+    "character_token_rouge_l_recall": {
+      "n": 51,
+      "total": 17.283,
+      "mean": 0.339,
+      "median": 0.333,
+      "q1": 0.266,
+      "q3": 0.392,
+      "min": 0.181,
+      "max": 0.551
+    },
+    "character_token_rouge_l_f1": {
+      "n": 51,
+      "total": 6.282,
+      "mean": 0.123,
+      "median": 0.127,
+      "q1": 0.095,
+      "q3": 0.144,
+      "min": 0.054,
+      "max": 0.232
+    },
+    "interpretation": "Descriptive similarity to historical workbook answers only. The references are explicitly not adjudicated gold answers."
+  },
+  "interpretation_limits": {
+    "not_clinical_accuracy": "A 100% deterministic validation rate means schema, provenance, numeric, and policy checks passed; it does not establish medical correctness.",
+    "retrieval_ranking_metrics_unavailable_without_gold": [
+      "Recall@k",
+      "Precision@k",
+      "MRR",
+      "nDCG@k"
+    ],
+    "clinical_metrics_unavailable_without_expert_gold": [
+      "gold action accuracy",
+      "macro-F1",
+      "major safety error rate",
+      "contraindication miss rate",
+      "review routing accuracy",
+      "decision-path exact match"
+    ],
+    "reference_answer_warning": "The held-out workbook answers are marked source_workbook_text_not_gold. BLEU, ROUGE, or BERTScore against them may be secondary descriptive similarity only, not clinical correctness."
+  }
+}

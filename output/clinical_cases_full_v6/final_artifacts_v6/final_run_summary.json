@@ -1,0 +1,28 @@
+{
+  "record_count": 51,
+  "error_count": 0,
+  "reviewable_record_count": 41,
+  "excluded_from_review_ids": [
+    9,
+    10,
+    11,
+    12,
+    21,
+    24,
+    33,
+    38,
+    39,
+    47
+  ],
+  "model_prior_case_count": 37,
+  "reasoning_trace_record_count": 51,
+  "validation_failure_count": 10,
+  "validation_warning_case_count": 19,
+  "validation_warning_distribution": {
+    "rationale_leaked_into_conclusion": 19
+  },
+  "generation_modes": {
+    "reasoning_trace_evidence_bound": 14,
+    "reasoning_trace_with_supplement_and_disclosed_model_prior": 37
+  }
+}

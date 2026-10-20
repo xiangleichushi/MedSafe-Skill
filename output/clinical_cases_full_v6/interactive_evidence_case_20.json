@@ -1,0 +1,251 @@
+{
+  "session_version": "3.1.0",
+  "case_id": 20,
+  "query": "间苯三酚对哺乳期有影响吗？",
+  "request": {
+    "request_version": "3.1.0",
+    "request_id": "USR-20-supplement",
+    "status": "awaiting_user_supplementation",
+    "target_drugs": [],
+    "question": "系统识别出 0 项病例信息和 11 项医学知识缺口。请补充你能够确认的内容；无法确认的项目可保留为空。",
+    "required_fields": [
+      {
+        "field": "active_ingredients_and_formulation",
+        "field_kind": "external_evidence",
+        "label": "复方药物的活性成分和剂型",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "lactation_compatibility_assessment",
+        "field_kind": "external_evidence",
+        "label": "哺乳期相容性结论及适用条件",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "authoritative_breastfeeding_resumption_recommendation",
+        "field_kind": "external_evidence",
+        "label": "停乳或恢复哺乳建议",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "terminal_elimination_half_life",
+        "field_kind": "external_evidence",
+        "label": "终末消除半衰期",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "active_metabolites_and_half_lives",
+        "field_kind": "external_evidence",
+        "label": "活性代谢物及其半衰期",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "molecular_weight",
+        "field_kind": "external_evidence",
+        "label": "分子量",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "protein_binding_fraction",
+        "field_kind": "external_evidence",
+        "label": "蛋白结合率",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "fraction_metabolized_and_elimination_route",
+        "field_kind": "external_evidence",
+        "label": "代谢比例、代谢途径和主要排泄途径",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "milk_transfer_or_relative_infant_dose",
+        "field_kind": "external_evidence",
+        "label": "乳汁浓度、乳血比或相对婴儿剂量",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "infant_oral_bioavailability",
+        "field_kind": "external_evidence",
+        "label": "婴儿口服生物利用度",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      },
+      {
+        "field": "monitoring_recommendation",
+        "field_kind": "external_evidence",
+        "label": "母亲和婴儿监测建议",
+        "priority": "important",
+        "purpose": "由专业操作者补充并作为确认信息进入最终回答。",
+        "source_fact": "retrieval_subquestion_coverage"
+      }
+    ],
+    "source_requirements": {
+      "case_fact": "患者或临床人员直接提供；保留终端原文，不要求文献来源。",
+      "external_evidence": "由专业操作者提供并作为权威输入直接接受；无需置信度，可选填来源元数据。"
+    },
+    "safety_constraints": [
+      "Patient-specific facts must not be inferred from model memory.",
+      "Operator-supplied values are accepted as confirmed workflow inputs.",
+      "Original terminal text and provenance are retained for audit."
+    ]
+  },
+  "model": "qwen3.7-plus-2026-05-26",
+  "configured_model_pool": [
+    "qwen3.7-plus-2026-05-26",
+    "qwen3.7-flash"
+  ],
+  "prompt_file": "supplemental_evidence_extractor_v2.txt",
+  "prompt_sha256": "e3e0114a71d7e47016128c4919ca6e820fbc5ae1717cabef2c5b1e80cdd8ce98",
+  "turns": [
+    {
+      "turn": 1,
+      "created_at_utc": "2026-07-30T14:12:39.589956+00:00",
+      "terminal_input": "间苯三酚，分子量小（126），注射液半衰期很短（15min）",
+      "accepted_entries": [
+        {
+          "field": "active_ingredients_and_formulation",
+          "value": "间苯三酚注射液",
+          "unit": null,
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "间苯三酚，分子量小（126），注射液",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "molecular_weight",
+          "value": "126",
+          "unit": null,
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "分子量小（126）",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        },
+        {
+          "field": "terminal_elimination_half_life",
+          "value": "15",
+          "unit": "min",
+          "population": null,
+          "formulation_and_route": null,
+          "source_span": "半衰期很短（15min）",
+          "source": {
+            "source_title": null,
+            "publisher_or_journal": null,
+            "year": null,
+            "page_or_section": null,
+            "verbatim_supporting_span": null,
+            "url_doi_or_document_identifier": null
+          },
+          "field_kind": "external_evidence"
+        }
+      ],
+      "rejected_entries": [],
+      "unmapped_text": "",
+      "response_id": "chatcmpl-efe12684-dbea-9c42-a3c8-8f9d56e79fab",
+      "usage": {
+        "completion_tokens": 2097,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1673,
+          "text_tokens": 2097
+        },
+        "prompt_tokens": 1877,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 1877
+        },
+        "total_tokens": 3974
+      }
+    }
+  ],
+  "values": {
+    "active_ingredients_and_formulation": {
+      "field": "active_ingredients_and_formulation",
+      "value": "间苯三酚注射液",
+      "unit": null,
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "间苯三酚，分子量小（126），注射液",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "molecular_weight": {
+      "field": "molecular_weight",
+      "value": "126",
+      "unit": null,
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "分子量小（126）",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    },
+    "terminal_elimination_half_life": {
+      "field": "terminal_elimination_half_life",
+      "value": "15",
+      "unit": "min",
+      "population": null,
+      "formulation_and_route": null,
+      "source_span": "半衰期很短（15min）",
+      "source": {
+        "source_title": null,
+        "publisher_or_journal": null,
+        "year": null,
+        "page_or_section": null,
+        "verbatim_supporting_span": null,
+        "url_doi_or_document_identifier": null
+      },
+      "field_kind": "external_evidence"
+    }
+  },
+  "session_status": "supplementation_complete_with_missing_fields",
+  "derived_estimates": [],
+  "collection_closed_by_user": true,
+  "updated_at_utc": "2026-07-30T14:12:42.753786+00:00"
+}
