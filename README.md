@@ -90,6 +90,10 @@ baseline and 50 MedSafe-Skill answers; the incomplete case is identified in
 directories are retained as development/run history and must not be mixed
 with the reported comparison.
 
+For the GitHub browser-upload edition, the two revision-result directories
+are supplied as ZIP archives because of browser file-size limits. Follow
+`RESTORE_RESULTS.md` after downloading to recreate the paths above.
+
 ## Quick start / 运行说明
 
 在 Linux/AutoDL 上，先按上面的命令把本仓库克隆到
