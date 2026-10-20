@@ -1,0 +1,33 @@
+# Keep generated results, cards, indexes, and redistributable weights trackable.
+# These held-out review materials are not required to reproduce model outputs.
+/output/**/review_key_PRIVATE.csv
+/output/**/clinical_cases_reference_held_out.json
+
+# Historical development material; keep locally, publish the V7 workflow.
+/ablation/
+/experiments/
+/skills/
+/docs/*
+!/docs/CONSULTATION_V7_EN.md
+!/docs/CONSULTATION_V7_ZH.md
+/README_REVIEWER.md
+/ablation_v7/README_HISTORY_ZH.md
+
+# Runtime and local credentials.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+*.log
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
